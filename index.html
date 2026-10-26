@@ -36,6 +36,7 @@
         <ul>
           <li><a href="#about" data-i18n="nav_about">Rólunk</a></li>
           <li><a href="#services" data-i18n="nav_services">Szolgáltatások</a></li>
+          <li><a href="#order" data-i18n="nav_booking">Rendelés</a></li>
           <li><a href="#gallery" data-i18n="nav_gallery">Galéria</a></li>
           <li><a href="#reviews" data-i18n="nav_reviews">Vélemények</a></li>
           <li><a href="#contact" data-i18n="nav_contact">Kapcsolat</a></li>
@@ -69,6 +70,7 @@
       <ul>
         <li><a href="#about" data-i18n="nav_about">Rólunk</a></li>
         <li><a href="#services" data-i18n="nav_services">Szolgáltatások</a></li>
+        <li><a href="#order" data-i18n="nav_booking">Rendelés</a></li>
         <li><a href="#gallery" data-i18n="nav_gallery">Galéria</a></li>
         <li><a href="#reviews" data-i18n="nav_reviews">Vélemények</a></li>
         <li><a href="#contact" data-i18n="nav_contact">Kapcsolat</a></li>
@@ -85,7 +87,7 @@
         <h1 data-i18n="hero_title">Bokréta Sarok Virágüzlet</h1>
         <p data-i18n="hero_subtitle">Friss vágott virágok, kézzel kötött csokrok és egyedi dekoráció — a Mester utca és a Bokréta utca sarkán.</p>
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#contact" data-i18n="hero_cta_primary">Foglalás most</a>
+          <a class="btn btn--primary" href="#order" data-i18n="hero_cta_primary">Foglalás most</a>
           <a class="btn btn--ghost-on-dark" href="#contact" data-i18n="hero_cta_secondary">Kapcsolat</a>
         </div>
       </div>
@@ -101,15 +103,15 @@
         </div>
 
         <div class="stats">
-          <div class="stat">
+          <div class="stat reveal">
             <span class="stat__number" data-stat-years>16</span>
             <span class="stat__label" data-i18n="about_stat_years">éve a sarkon</span>
           </div>
-          <div class="stat">
+          <div class="stat reveal">
             <span class="stat__number">98%</span>
             <span class="stat__label" data-i18n="about_stat_rating">ajánlja</span>
           </div>
-          <div class="stat">
+          <div class="stat reveal">
             <span class="stat__number">36</span>
             <span class="stat__label" data-i18n="about_stat_reviews">vélemény</span>
           </div>
@@ -126,7 +128,7 @@
         </div>
 
         <div class="services-grid">
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z" stroke="currentColor" stroke-width="1.6"/></svg>
             </div>
@@ -134,7 +136,7 @@
             <p data-i18n="service_1_body">Kézzel kötött csokrok minden alkalomra — születésnap, évforduló, vagy csak mert megérdemli.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M19.1 19.1l-4.2-4.2M2 12h6M22 12h-6M4.9 19.1l4.2-4.2M19.1 4.9l-4.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             </div>
@@ -142,7 +144,7 @@
             <p data-i18n="service_2_body">Egyedi virágdíszítés esküvőkre, ünnepségekre és céges eseményekre, a tervezéstől a kivitelezésig.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3c2 2.5 3 4.8 3 7a3 3 0 1 1-6 0c0-2.2 1-4.5 3-7Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 21h10M9 21v-4h6v4" stroke="currentColor" stroke-width="1.6"/></svg>
             </div>
@@ -150,7 +152,7 @@
             <p data-i18n="service_3_body">Válogatott szobanövények és cserepes dísznövények otthonra vagy irodába.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card reveal">
             <div class="service-card__icon" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7h18M5 7v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7M9 11h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
             </div>
@@ -158,6 +160,132 @@
             <p data-i18n="service_4_body">Telefonos vagy online foglalás, igény szerint kiszállítással Budapesten.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- Bouquet examples -->
+    <section class="section section--alt" id="bouquets">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow" data-i18n="bouquets_eyebrow">Ihlet</span>
+          <h2 data-i18n="bouquets_title">Néhány csokrunk, amit készítettünk</h2>
+          <p data-i18n="bouquets_subtitle">Ezekhez hasonló összeállításokat is kérhetsz a rendelési űrlapon.</p>
+        </div>
+
+        <div class="bouquet-grid">
+          <article class="bouquet-card reveal">
+            <img src="images/shop-1-thumb.webp" alt="Vegyes szezonális csokor rózsákkal, gerberákkal és napraforgókkal" loading="lazy" width="400" height="500" />
+            <div class="bouquet-card__body">
+              <h3 data-i18n="bouquet_1_title">Vegyes szezonális csokor</h3>
+              <p data-i18n="bouquet_1_body">Rózsák, gerberák és napraforgók egy élénk, színes összeállításban — bármilyen alkalomra.</p>
+            </div>
+          </article>
+          <article class="bouquet-card reveal">
+            <img src="images/shop-3-thumb.webp" alt="Piros rózsákból és liliomokból álló csokor" loading="lazy" width="400" height="500" />
+            <div class="bouquet-card__body">
+              <h3 data-i18n="bouquet_2_title">Rózsás-liliomos csokor</h3>
+              <p data-i18n="bouquet_2_body">Klasszikus piros rózsák és liliomok — tökéletes évfordulóra vagy szerelmes meglepetésnek.</p>
+            </div>
+          </article>
+          <article class="bouquet-card reveal">
+            <img src="images/shop-4-thumb.webp" alt="Pasztell tulipánokból kötött csokor" loading="lazy" width="400" height="500" />
+            <div class="bouquet-card__body">
+              <h3 data-i18n="bouquet_3_title">Tulipáncsokor</h3>
+              <p data-i18n="bouquet_3_body">Friss, pasztell tulipánok kraft papírba csomagolva — egyszerű és elegáns.</p>
+            </div>
+          </article>
+          <article class="bouquet-card reveal">
+            <img src="images/shop-2-thumb.webp" alt="Kézzel font koszorúk és cserepes hortenziák" loading="lazy" width="400" height="500" />
+            <div class="bouquet-card__body">
+              <h3 data-i18n="bouquet_4_title">Koszorú és cserepes dekor</h3>
+              <p data-i18n="bouquet_4_body">Kézzel font koszorúk és cserepes dísznövények otthonra vagy megemlékezésre.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flower order form -->
+    <section class="section" id="order">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow" data-i18n="order_eyebrow">Rendelés</span>
+          <h2 data-i18n="order_title">Kérj egyedi csokrot</h2>
+          <p data-i18n="order_subtitle">Mondd el, milyen alkalomra és milyen virágokat szeretnél — mi összeállítjuk.</p>
+        </div>
+
+        <form class="order-form reveal" id="order-form" novalidate>
+          <div class="order-form__row">
+            <div class="field">
+              <label for="order-name" data-i18n="order_name_label">Név</label>
+              <input type="text" id="order-name" name="name" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="order-email" data-i18n="order_email_label">E-mail cím</label>
+              <input type="email" id="order-email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="order-form__row">
+            <div class="field">
+              <label for="order-phone" data-i18n="order_phone_label">Telefonszám (opcionális)</label>
+              <input type="tel" id="order-phone" name="phone" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="order-date" data-i18n="order_date_label">Kívánt dátum (opcionális)</label>
+              <input type="date" id="order-date" name="date" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="order-occasion" data-i18n="order_occasion_label">Milyen alkalomra?</label>
+            <select id="order-occasion" name="occasion">
+              <option value="" data-i18n="order_occasion_placeholder" selected disabled>Válassz…</option>
+              <option value="birthday" data-i18n="order_occasion_option_birthday">Születésnap</option>
+              <option value="wedding" data-i18n="order_occasion_option_wedding">Esküvő</option>
+              <option value="anniversary" data-i18n="order_occasion_option_anniversary">Évforduló</option>
+              <option value="remembrance" data-i18n="order_occasion_option_remembrance">Megemlékezés</option>
+              <option value="surprise" data-i18n="order_occasion_option_surprise">Csak úgy — meglepetés</option>
+              <option value="other" data-i18n="order_occasion_option_other">Egyéb</option>
+            </select>
+          </div>
+
+          <fieldset class="order-form__flowers">
+            <legend data-i18n="order_flowers_label">Milyen fajta virágokat szeretne bele?</legend>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="flowers" value="rose" />
+              <span data-i18n="order_flower_rose">Rózsa</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="flowers" value="tulip" />
+              <span data-i18n="order_flower_tulip">Tulipán</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="flowers" value="lily" />
+              <span data-i18n="order_flower_lily">Liliom</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="flowers" value="orchid" />
+              <span data-i18n="order_flower_orchid">Orchidea</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="flowers" value="sunflower" />
+              <span data-i18n="order_flower_sunflower">Napraforgó</span>
+            </label>
+            <label class="checkbox-chip">
+              <input type="checkbox" name="flowers" value="mixed" />
+              <span data-i18n="order_flower_mixed">Szezonális vegyes</span>
+            </label>
+          </fieldset>
+
+          <div class="field">
+            <label for="order-notes" data-i18n="order_notes_label">Egyéb kérés (szín, költségkeret, stb.)</label>
+            <textarea id="order-notes" name="notes" rows="3"></textarea>
+          </div>
+
+          <button class="btn btn--primary" type="submit" data-i18n="order_submit">Ajánlatkérés küldése</button>
+          <p class="form-status" id="order-form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
 
@@ -170,20 +298,20 @@
         </div>
 
         <div class="gallery-grid" id="gallery-grid">
-          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-1.webp">
+          <button class="gallery-item reveal" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-1.webp">
             <img src="images/shop-1-thumb.webp" alt="Rózsák, gerberák, napraforgók és hortenziák az üzletben" loading="lazy" width="400" height="500" />
           </button>
-          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-2.webp">
+          <button class="gallery-item reveal" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-2.webp">
             <img src="images/shop-2-thumb.webp" alt="Koszorúk és cserepes hortenziák az üzlet bejáratánál" loading="lazy" width="400" height="500" />
           </button>
-          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-3.webp">
+          <button class="gallery-item reveal" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-3.webp">
             <img src="images/shop-3-thumb.webp" alt="Piros rózsák és liliomok csokorba kötve" loading="lazy" width="400" height="500" />
           </button>
-          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-4.webp">
+          <button class="gallery-item reveal" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-4.webp">
             <img src="images/shop-4-thumb.webp" alt="Tulipáncsokrok felülről fotózva" loading="lazy" width="400" height="500" />
           </button>
-          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-5.webp">
-            <img src="images/shop-5-thumb.webp" alt="Csokorkotés az üzletben" loading="lazy" width="400" height="500" />
+          <button class="gallery-item reveal" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-5.webp">
+            <img src="images/shop-5-thumb.webp" alt="Csokorkötés az üzletben" loading="lazy" width="400" height="500" />
           </button>
         </div>
       </div>
@@ -202,7 +330,7 @@
           <h2 data-i18n="reviews_title">Amit a vásárlóink mondanak</h2>
         </div>
 
-        <div class="review-summary">
+        <div class="review-summary reveal">
           <span class="review-summary__score">98%</span>
           <div>
             <div class="review-stars" aria-hidden="true">★★★★★</div>
@@ -234,7 +362,10 @@
             </div>
             <div>
               <dt data-i18n="contact_hours_label">Nyitvatartás</dt>
-              <dd data-i18n="contact_hours_value">H–P: 9:00–19:00 · Szo: 8:00–16:00 · V: zárva</dd>
+              <dd>
+                <span data-i18n="contact_hours_value">Hívjon vagy írjon, és egyeztetünk időpontot!</span>
+                <span id="open-status" class="status-badge" role="status"></span>
+              </dd>
             </div>
           </dl>
         </div>

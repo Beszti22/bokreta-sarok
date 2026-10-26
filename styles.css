@@ -332,7 +332,17 @@ p {
   display: flex;
   align-items: center;
   color: var(--color-white);
+  isolation: isolate;
   background: linear-gradient(180deg, rgba(46, 42, 38, 0.55), rgba(46, 42, 38, 0.65)), var(--hero-image) center/cover no-repeat;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(60% 50% at 85% 15%, color-mix(in oklab, var(--color-gold) 35%, transparent), transparent 70%);
+  mix-blend-mode: soft-light;
 }
 
 .hero__content {
@@ -380,6 +390,12 @@ p {
   background: var(--color-white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px -14px rgba(46, 42, 38, 0.32);
 }
 
 .stat__number {
@@ -407,6 +423,13 @@ p {
   padding: var(--space-md);
   box-shadow: var(--shadow);
   border: 1px solid var(--color-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 38px -16px rgba(46, 42, 38, 0.35);
+  border-color: var(--color-rose);
 }
 
 .service-card__icon {
@@ -446,17 +469,23 @@ p {
   overflow: hidden;
   aspect-ratio: 4 / 5;
   background: var(--color-cream-deep);
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.25s ease;
+}
+
+.gallery-item:hover {
+  box-shadow: 0 16px 30px -16px rgba(46, 42, 38, 0.4);
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 #lightbox {
@@ -490,6 +519,198 @@ p {
   cursor: pointer;
 }
 
+/* ---------- Bouquet examples ---------- */
+.bouquet-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.bouquet-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bouquet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 38px -16px rgba(46, 42, 38, 0.35);
+}
+
+.bouquet-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.bouquet-card:hover img {
+  transform: scale(1.06);
+}
+
+.bouquet-card__body {
+  padding: var(--space-md);
+}
+
+.bouquet-card__body h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3em;
+}
+
+.bouquet-card__body p {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 0;
+}
+
+/* ---------- Order form ---------- */
+.order-form {
+  max-width: 760px;
+  margin-inline: auto;
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: var(--space-md);
+}
+
+.order-form__row {
+  display: grid;
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .order-form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.order-form select {
+  width: 100%;
+  padding: 0.75em 0.9em;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+.order-form select:focus {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 1px;
+}
+
+.order-form__flowers {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.order-form__flowers legend {
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  padding: 0;
+}
+
+.checkbox-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5em 0.9em;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-cream);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.checkbox-chip:has(input:checked) {
+  border-color: var(--color-rose);
+  background: color-mix(in oklab, var(--color-rose) 14%, var(--color-cream));
+}
+
+.checkbox-chip input {
+  accent-color: var(--color-rose);
+}
+
+/* ---------- Open/closed status badge ---------- */
+.status-badge {
+  display: inline-block;
+  margin-left: 0.6em;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
+.status-badge--open {
+  background: color-mix(in oklab, var(--color-sage) 20%, var(--color-white));
+  color: var(--color-sage-dark);
+}
+
+.status-badge--closed {
+  background: color-mix(in oklab, var(--color-rose) 18%, var(--color-white));
+  color: var(--color-rose-dark);
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @keyframes reveal-in {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
 /* ---------- Reviews ---------- */
 .review-summary {
   display: flex;
@@ -500,6 +721,12 @@ p {
   border-radius: var(--radius);
   padding: var(--space-lg);
   box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-summary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 38px -16px rgba(46, 42, 38, 0.32);
 }
 
 .review-summary__score {
