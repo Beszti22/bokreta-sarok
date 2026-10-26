@@ -100,6 +100,7 @@ const translations = {
     contact_address_label: "Cím",
     contact_phone_label: "Telefon",
     contact_email_label: "E-mail",
+    contact_facebook_label: "Facebook",
     contact_hours_label: "Nyitvatartás",
     contact_hours_value: "H–P: 9:00–19:00 · Szo: 8:00–16:00 · V: zárva",
     contact_form_title: "Írjon nekünk",
@@ -211,6 +212,7 @@ const translations = {
     contact_address_label: "Address",
     contact_phone_label: "Phone",
     contact_email_label: "Email",
+    contact_facebook_label: "Facebook",
     contact_hours_label: "Opening hours",
     contact_hours_value: "Mon–Fri: 9am–7pm · Sat: 8am–4pm · Sun: closed",
     contact_form_title: "Send us a message",
@@ -225,6 +227,12 @@ const translations = {
     footer_rights: "All rights reserved.",
   },
 };
+
+// Classic (non-module) <script> top-level `const` does NOT attach to
+// `window`, unlike `var` — expose it explicitly so main.js can read it.
+if (typeof window !== "undefined") {
+  window.translations = translations;
+}
 
 if (typeof module !== "undefined" && module.exports) {
   module.exports = translations;
