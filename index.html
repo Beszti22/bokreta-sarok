@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta_title">Bokréta Sarok Virágüzlet | Budapest, Ferencváros</title>
+  <meta name="description" data-i18n-attr="content:meta_description" content="Bokréta Sarok Virágüzlet — friss vágott virágok, csokrok és dekoráció a Mester utca és Bokréta utca sarkán, Budapesten, 2010 óta." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Feature-detect Invoker Commands (popover open/close buttons below) and
+       load a tiny polyfill only in browsers that lack native support. -->
+  <script type="module">
+    if (!("commandForElement" in HTMLButtonElement.prototype)) {
+      import("https://esm.run/invokers-polyfill");
+    }
+    if (!("popover" in HTMLElement.prototype)) {
+      import("https://unpkg.com/@oddbird/popover-polyfill@latest/dist/popover.min.js");
+    }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top">
+        <span class="brand__name">Bokréta Sarok</span>
+        <span class="brand__tag" data-i18n="nav_home">Virágüzlet</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Fő navigáció">
+        <ul>
+          <li><a href="#about" data-i18n="nav_about">Rólunk</a></li>
+          <li><a href="#services" data-i18n="nav_services">Szolgáltatások</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Galéria</a></li>
+          <li><a href="#reviews" data-i18n="nav_reviews">Vélemények</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Kapcsolat</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle" role="group" aria-label="Nyelv / Language">
+          <button type="button" data-lang-btn="hu" aria-pressed="true">HU</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+        </div>
+
+        <!-- Declarative popover trigger: no JS needed to open/close -->
+        <button class="menu-btn" type="button" commandfor="mobile-nav" command="toggle-popover" aria-label="Menü megnyitása">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav: a native popover, opened/closed purely via command/commandfor -->
+  <div id="mobile-nav" popover="auto">
+    <button class="menu-btn" type="button" commandfor="mobile-nav" command="hide-popover" aria-label="Menü bezárása">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </button>
+    <nav aria-label="Mobil navigáció">
+      <ul>
+        <li><a href="#about" data-i18n="nav_about">Rólunk</a></li>
+        <li><a href="#services" data-i18n="nav_services">Szolgáltatások</a></li>
+        <li><a href="#gallery" data-i18n="nav_gallery">Galéria</a></li>
+        <li><a href="#reviews" data-i18n="nav_reviews">Vélemények</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero" style="--hero-image:url('images/hero.webp')">
+      <div class="container hero__content">
+        <span class="eyebrow" data-i18n="hero_eyebrow">Virágüzlet a sarkon, 2010 óta</span>
+        <h1 data-i18n="hero_title">Bokréta Sarok Virágüzlet</h1>
+        <p data-i18n="hero_subtitle">Friss vágott virágok, kézzel kötött csokrok és egyedi dekoráció — a Mester utca és a Bokréta utca sarkán.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contact" data-i18n="hero_cta_primary">Foglalás most</a>
+          <a class="btn btn--ghost-on-dark" href="#contact" data-i18n="hero_cta_secondary">Kapcsolat</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="about_eyebrow">Rólunk</span>
+          <h2 data-i18n="about_title">Virágok, amik számítanak</h2>
+          <p data-i18n="about_body">2010 óta válogatjuk a legszebb vágott virágokat és dísznövényeket a Mester utca és a Bokréta utca sarkán. Legyen szó egy spontán ajándékcsokorról, esküvői dekorációról vagy egy ünnepi rendezvényről, nálunk mindig friss árut és személyre szabott összeállítást talál.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__number" data-stat-years>16</span>
+            <span class="stat__label" data-i18n="about_stat_years">éve a sarkon</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">98%</span>
+            <span class="stat__label" data-i18n="about_stat_rating">ajánlja</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">36</span>
+            <span class="stat__label" data-i18n="about_stat_reviews">vélemény</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow" data-i18n="services_eyebrow">Szolgáltatások</span>
+          <h2 data-i18n="services_title">Amiben segíthetünk</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3 data-i18n="service_1_title">Csokrok és ajándék virágok</h3>
+            <p data-i18n="service_1_body">Kézzel kötött csokrok minden alkalomra — születésnap, évforduló, vagy csak mert megérdemli.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M19.1 19.1l-4.2-4.2M2 12h6M22 12h-6M4.9 19.1l4.2-4.2M19.1 4.9l-4.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 data-i18n="service_2_title">Esküvői és ünnepi dekoráció</h3>
+            <p data-i18n="service_2_body">Egyedi virágdíszítés esküvőkre, ünnepségekre és céges eseményekre, a tervezéstől a kivitelezésig.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3c2 2.5 3 4.8 3 7a3 3 0 1 1-6 0c0-2.2 1-4.5 3-7Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 21h10M9 21v-4h6v4" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <h3 data-i18n="service_3_title">Cserepes növények</h3>
+            <p data-i18n="service_3_body">Válogatott szobanövények és cserepes dísznövények otthonra vagy irodába.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7h18M5 7v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7M9 11h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 data-i18n="service_4_title">Rendelés és szállítás</h3>
+            <p data-i18n="service_4_body">Telefonos vagy online foglalás, igény szerint kiszállítással Budapesten.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow" data-i18n="gallery_eyebrow">Galéria</span>
+          <h2 data-i18n="gallery_title">Egy pillantás az üzletbe</h2>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-1.webp">
+            <img src="images/shop-1-thumb.webp" alt="Virágok a Bokréta Sarok üzletben" loading="lazy" width="400" height="500" />
+          </button>
+          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-2.webp">
+            <img src="images/shop-2-thumb.webp" alt="Rózsák és szezonális csokrok" loading="lazy" width="400" height="500" />
+          </button>
+          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-3.webp">
+            <img src="images/shop-3-thumb.webp" alt="Tulipánok és vágott virágok" loading="lazy" width="400" height="500" />
+          </button>
+          <button class="gallery-item" type="button" commandfor="lightbox" command="show-modal" data-full="images/shop-4.webp">
+            <img src="images/shop-4-thumb.webp" alt="Orchideák és cserepes növények" loading="lazy" width="400" height="500" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <dialog id="lightbox">
+      <button class="lightbox-close" type="button" commandfor="lightbox" command="close" aria-label="Bezárás">✕</button>
+      <img id="lightbox-img" src="" alt="" />
+    </dialog>
+
+    <!-- Reviews -->
+    <section class="section section--alt" id="reviews">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow" data-i18n="reviews_eyebrow">Vélemények</span>
+          <h2 data-i18n="reviews_title">Amit a vásárlóink mondanak</h2>
+        </div>
+
+        <div class="review-summary">
+          <span class="review-summary__score">98%</span>
+          <div>
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p data-i18n="reviews_summary" style="margin:0">a vásárlók 98%-a ajánlja (36 értékelés alapján)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow" data-i18n="contact_eyebrow">Kapcsolat</span>
+          <h2 data-i18n="contact_title">Keressen minket</h2>
+
+          <dl class="contact-list">
+            <div>
+              <dt data-i18n="contact_address_label">Cím</dt>
+              <dd>Mester u. 40-44.A (Mester u.–Bokréta u. sarok), Budapest</dd>
+            </div>
+            <div>
+              <dt data-i18n="contact_phone_label">Telefon</dt>
+              <dd><a href="tel:+36302190966">+36 30 219 0966</a></dd>
+            </div>
+            <div>
+              <dt data-i18n="contact_email_label">E-mail</dt>
+              <dd><a href="mailto:info@bokretasarok.com">info@bokretasarok.com</a></dd>
+            </div>
+            <div>
+              <dt data-i18n="contact_hours_label">Nyitvatartás</dt>
+              <dd data-i18n="contact_hours_value">Hívjon vagy írjon, és egyeztetünk időpontot!</dd>
+            </div>
+          </dl>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <h3 data-i18n="contact_form_title" style="margin-bottom:0">Írjon nekünk</h3>
+
+          <div class="field">
+            <label for="name" data-i18n="contact_form_name">Név</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+
+          <div class="field">
+            <label for="email" data-i18n="contact_form_email">E-mail cím</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+
+          <div class="field">
+            <label for="message" data-i18n="contact_form_message">Üzenet</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <button class="btn btn--primary" type="submit" data-i18n="contact_form_submit">Üzenet küldése</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>&copy; <span id="year"></span> Bokréta Sarok Virágüzlet. <span data-i18n="footer_rights">Minden jog fenntartva.</span></span>
+      <a href="tel:+36302190966">+36 30 219 0966</a>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
