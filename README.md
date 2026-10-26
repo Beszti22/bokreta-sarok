@@ -17,9 +17,9 @@ A `main` branch-re pusholt commit automatikusan deployol a Vercelen keresztül.
 
 ## Teendők a teljes éleshez
 
-- [x] Képek feltöltése az `images/` mappába (hero.webp, shop-1..4.webp + thumbnail verziók) — valódi üzleti fotókból
+- [x] Képek feltöltése az `images/` mappába (hero.webp, shop-1..5.webp + thumbnail verziók) — valódi üzleti fotókból
 - [x] Nyitvatartás pontosítása (H–P 9–19, Szo 8–16, V zárva — Google Maps bejegyzés alapján)
+- [x] Karácsonyi díszes kép (IMG_0696) kihagyva — nem évkörtől független; dolgozós kép (IMG_0697) bekerült 5. galériaelemként
 - [ ] Domain regisztrálása és Vercelhez kötése
 - [ ] Resend domain-verifikáció (DNS rekordok — ellenőrizd, hol vannak a nameserverek, mielőtt bármit módosítasz)
 - [ ] Vercel env változók: `RESEND_API_KEY`, `CONTACT_FROM_ADDRESS`, `CONTACT_TO_ADDRESS` (Config típusként, nem Secret)
-- [ ] Két fotó döntés Kristóftól: a karácsonyi díszes kép (IMG_0696) és a dolgozókat ábrázoló kép (IMG_0697) kerüljön-e galériába — jelenleg nincs használva
