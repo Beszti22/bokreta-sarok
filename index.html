@@ -97,8 +97,17 @@
         <span class="eyebrow hero-in hero-in--1" data-i18n="hero_eyebrow">Virágüzlet a sarkon, 2010 óta</span>
         <h1 class="hero-in hero-in--2" data-i18n="hero_title">Bokréta Sarok Virágüzlet</h1>
         <p class="hero-in hero-in--3" data-i18n="hero_subtitle">Friss vágott virágok, kézzel kötött csokrok és egyedi dekoráció — a Mester utca és a Bokréta utca sarkán.</p>
-        <div class="hero__actions hero-in hero-in--4">
-          <a class="btn btn--primary" href="#order" data-i18n="hero_cta_primary">Foglalás most</a>
+
+        <div class="hero__trust hero-in hero-in--4">
+          <span class="status-badge js-open-status" role="status"></span>
+          <span class="hero__rating">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6L12 2.5Z" /></svg>
+            <span data-i18n="hero_rating_text">4,7 · 131+ Google-vélemény</span>
+          </span>
+        </div>
+
+        <div class="hero__actions hero-in hero-in--5">
+          <a class="btn btn--primary" href="#order" data-i18n="hero_cta_primary">Csokrot rendelek</a>
           <a class="btn btn--ghost-on-dark" href="#contact" data-i18n="hero_cta_secondary">Kapcsolat</a>
         </div>
       </div>
@@ -121,15 +130,24 @@
 
         <div class="stats">
           <div class="stat reveal">
-            <span class="stat__number" data-stat-years>16</span>
+            <div class="stat__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 2v4M16 2v4M3.5 9h17M5 5h14a1.5 1.5 0 0 1 1.5 1.5V19a2 2 0 0 1-2 2H5.5a2 2 0 0 1-2-2V6.5A1.5 1.5 0 0 1 5 5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="stat__number" data-stat-years data-count-to="16">0</span>
             <span class="stat__label" data-i18n="about_stat_years">éve a sarkon</span>
           </div>
           <div class="stat reveal">
-            <span class="stat__number">98%</span>
+            <div class="stat__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6L12 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="stat__number" data-count-to="98" data-count-suffix="%">0%</span>
             <span class="stat__label" data-i18n="about_stat_rating">ajánlja</span>
           </div>
           <div class="stat reveal">
-            <span class="stat__number">36</span>
+            <div class="stat__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.3 0-2.5-.28-3.6-.78L3 20l1.03-4.3A8.44 8.44 0 0 1 3 11.5 8.5 8.5 0 0 1 11.5 3 8.5 8.5 0 0 1 21 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="stat__number" data-count-to="36">0</span>
             <span class="stat__label" data-i18n="about_stat_reviews">vélemény</span>
           </div>
         </div>
@@ -354,6 +372,39 @@
             <p data-i18n="reviews_summary" style="margin:0">a vásárlók 98%-a ajánlja (36 értékelés alapján)</p>
           </div>
         </div>
+
+        <div class="review-grid">
+          <article class="review-card reveal">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__quote" data-i18n="review_1_quote">„Mindig gyönyörű a kínálat, és nagyon kedves a kiszolgálás.”</p>
+            <p class="review-card__author">Lilla B. <span>· Google</span></p>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__quote" data-i18n="review_2_quote">„Nagyon kedves a hölgy, gyönyörű menyasszonyi csokrokat készített nekem! Nagyon köszönöm!”</p>
+            <p class="review-card__author">Henrietta D. <span>· Google</span></p>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__quote" data-i18n="review_3_quote">„17 éve csak elismeréssel és köszönettel tartozunk ennek a virágüzletnek. Mindig kitűnő minőségű az áru, segítőkész és kedves a kiszolgálás.”</p>
+            <p class="review-card__author">Beatrix P. <span>· Google</span></p>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__quote" data-i18n="review_4_quote">„Szebbnél szebb csokrokat készítenek, rendszeresen járok ide, mindig nagyon kedvesek és segítőkészek. Mindig friss virágok vannak készleten.”</p>
+            <p class="review-card__author">Kristóf A. <span>· Google</span></p>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__quote" data-i18n="review_5_quote">„Nagyon segítőkészek és gyönyörű csokrokat kötnek, amik sokáig megmaradnak.”</p>
+            <p class="review-card__author">Tekla P. <span>· Google</span></p>
+          </article>
+          <article class="review-card reveal">
+            <div class="review-stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__quote" data-i18n="review_6_quote">„Nagyon kedves kiszolgálás, gyönyörű virágok — a legboldogabb és legszomorúbb pillanatokban is számíthattunk rájuk.”</p>
+            <p class="review-card__author">Mónika V. <span>· Google</span></p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -385,7 +436,7 @@
               <dt data-i18n="contact_hours_label">Nyitvatartás</dt>
               <dd>
                 <span data-i18n="contact_hours_value">Hívjon vagy írjon, és egyeztetünk időpontot!</span>
-                <span id="open-status" class="status-badge" role="status"></span>
+                <span class="status-badge js-open-status" role="status"></span>
               </dd>
             </div>
           </dl>

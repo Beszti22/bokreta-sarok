@@ -20,8 +20,9 @@ const translations = {
     hero_title: "Bokréta Sarok Virágüzlet",
     hero_subtitle:
       "Friss vágott virágok, kézzel kötött csokrok és egyedi dekoráció — a Mester utca és a Bokréta utca sarkán.",
-    hero_cta_primary: "Foglalás most",
+    hero_cta_primary: "Csokrot rendelek",
     hero_cta_secondary: "Kapcsolat",
+    hero_rating_text: "4,7 · 131+ Google-vélemény",
     hero_scroll_cue_label: "Görgessen lejjebb",
 
     about_eyebrow: "Rólunk",
@@ -95,6 +96,12 @@ const translations = {
     reviews_eyebrow: "Vélemények",
     reviews_title: "Amit a vásárlóink mondanak",
     reviews_summary: "a vásárlók 98%-a ajánlja (36 értékelés alapján)",
+    review_1_quote: "„Mindig gyönyörű a kínálat, és nagyon kedves a kiszolgálás.”",
+    review_2_quote: "„Nagyon kedves a hölgy, gyönyörű menyasszonyi csokrokat készített nekem! Nagyon köszönöm!”",
+    review_3_quote: "„17 éve csak elismeréssel és köszönettel tartozunk ennek a virágüzletnek. Mindig kitűnő minőségű az áru, segítőkész és kedves a kiszolgálás.”",
+    review_4_quote: "„Szebbnél szebb csokrokat készítenek, rendszeresen járok ide, mindig nagyon kedvesek és segítőkészek. Mindig friss virágok vannak készleten.”",
+    review_5_quote: "„Nagyon segítőkészek és gyönyörű csokrokat kötnek, amik sokáig megmaradnak.”",
+    review_6_quote: "„Nagyon kedves kiszolgálás, gyönyörű virágok — a legboldogabb és legszomorúbb pillanatokban is számíthattunk rájuk.”",
 
     contact_eyebrow: "Kapcsolat",
     contact_title: "Keressen minket",
@@ -134,8 +141,9 @@ const translations = {
     hero_title: "Bokréta Sarok Virágüzlet",
     hero_subtitle:
       "Fresh cut flowers, hand-tied bouquets and bespoke decoration — on the corner of Mester utca and Bokréta utca.",
-    hero_cta_primary: "Book now",
+    hero_cta_primary: "Order flowers",
     hero_cta_secondary: "Contact us",
+    hero_rating_text: "4.7 · 131+ Google reviews",
     hero_scroll_cue_label: "Scroll down",
 
     about_eyebrow: "About us",
@@ -209,6 +217,12 @@ const translations = {
     reviews_eyebrow: "Reviews",
     reviews_title: "What our customers say",
     reviews_summary: "98% of customers recommend us (based on 36 reviews)",
+    review_1_quote: "“The selection is always beautiful, and the service is so kind.”",
+    review_2_quote: "“The lady was so kind and made gorgeous bridal bouquets for me! Thank you so much!”",
+    review_3_quote: "“For 17 years we've had nothing but praise and gratitude for this flower shop. Always top quality stock, helpful and kind service.”",
+    review_4_quote: "“Each bouquet is more beautiful than the last — I come here regularly, they're always kind and helpful, and the flowers are always fresh.”",
+    review_5_quote: "“Very helpful, and they tie gorgeous bouquets that last a long time.”",
+    review_6_quote: "“Such kind service, beautiful flowers — we could count on them for our happiest and saddest moments alike.”",
 
     contact_eyebrow: "Contact",
     contact_title: "Get in touch",

@@ -82,17 +82,19 @@
   }
 
   function updateOpenStatusBadge() {
-    const badge = document.getElementById("open-status");
-    if (!badge) return;
+    const badges = document.querySelectorAll(".js-open-status");
+    if (!badges.length) return;
 
     const lang = document.documentElement.lang === "en" ? "en" : "hu";
     const dict = window.translations && window.translations[lang];
     if (!dict) return;
 
     const open = isShopOpenNow(new Date());
-    badge.textContent = open ? dict.status_open : dict.status_closed;
-    badge.classList.toggle("status-badge--open", open);
-    badge.classList.toggle("status-badge--closed", !open);
+    badges.forEach((badge) => {
+      badge.textContent = open ? dict.status_open : dict.status_closed;
+      badge.classList.toggle("status-badge--open", open);
+      badge.classList.toggle("status-badge--closed", !open);
+    });
   }
 
   function initOpenStatus() {
@@ -139,7 +141,63 @@
     const el = document.querySelector("[data-stat-years]");
     if (!el) return;
     const years = new Date().getFullYear() - FOUNDED_YEAR;
-    el.textContent = String(years);
+    el.setAttribute("data-count-to", String(years));
+  }
+
+  /* ---------------- Stat counters (count up on scroll into view) ---------------- */
+
+  function animateCount(el) {
+    const target = Number(el.getAttribute("data-count-to"));
+    if (!Number.isFinite(target)) return;
+    const suffix = el.getAttribute("data-count-suffix") || "";
+    const duration = 1200;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      // easeOutCubic — fast start, gentle settle.
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      el.textContent = `${value}${suffix}`;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = `${target}${suffix}`;
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  function initStatCounters() {
+    const items = document.querySelectorAll("[data-count-to]");
+    if (!items.length) return;
+
+    const reduceMotion =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      items.forEach((el) => {
+        const target = el.getAttribute("data-count-to");
+        const suffix = el.getAttribute("data-count-suffix") || "";
+        el.textContent = `${target}${suffix}`;
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    items.forEach((el) => observer.observe(el));
   }
 
   /* ---------------- Footer year ---------------- */
@@ -287,6 +345,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     initLanguage();
     initYearsStat();
+    initStatCounters();
     initFooterYear();
     initLightbox();
     initContactForm();
