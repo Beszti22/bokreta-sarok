@@ -10,6 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Hero background is the LCP candidate — preload it so it paints as
+       early as possible instead of waiting on the CSS cascade. -->
+  <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high" />
+
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Feature-detect Invoker Commands (popover open/close buttons below) and
@@ -83,14 +87,20 @@
     <!-- Hero -->
     <section class="hero" style="--hero-image:url('images/hero.webp')">
       <div class="container hero__content">
-        <span class="eyebrow" data-i18n="hero_eyebrow">Virágüzlet a sarkon, 2010 óta</span>
-        <h1 data-i18n="hero_title">Bokréta Sarok Virágüzlet</h1>
-        <p data-i18n="hero_subtitle">Friss vágott virágok, kézzel kötött csokrok és egyedi dekoráció — a Mester utca és a Bokréta utca sarkán.</p>
-        <div class="hero__actions">
+        <span class="eyebrow hero-in hero-in--1" data-i18n="hero_eyebrow">Virágüzlet a sarkon, 2010 óta</span>
+        <h1 class="hero-in hero-in--2" data-i18n="hero_title">Bokréta Sarok Virágüzlet</h1>
+        <p class="hero-in hero-in--3" data-i18n="hero_subtitle">Friss vágott virágok, kézzel kötött csokrok és egyedi dekoráció — a Mester utca és a Bokréta utca sarkán.</p>
+        <div class="hero__actions hero-in hero-in--4">
           <a class="btn btn--primary" href="#order" data-i18n="hero_cta_primary">Foglalás most</a>
           <a class="btn btn--ghost-on-dark" href="#contact" data-i18n="hero_cta_secondary">Kapcsolat</a>
         </div>
       </div>
+
+      <a class="hero__scroll-cue" href="#about" data-i18n-attr="aria-label:hero_scroll_cue_label" aria-label="Görgessen lejjebb">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
     </section>
 
     <!-- About -->

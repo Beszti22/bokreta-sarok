@@ -371,6 +371,81 @@ p {
   margin-top: var(--space-md);
 }
 
+/* Staggered load-in for the hero content — the first thing a visitor
+   sees, so it gets its own entrance rather than reusing .reveal
+   (which is scroll-triggered and the hero is already in view on load). */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: hero-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-in--1 {
+    animation-delay: 0.1s;
+  }
+  .hero-in--2 {
+    animation-delay: 0.22s;
+  }
+  .hero-in--3 {
+    animation-delay: 0.36s;
+  }
+  .hero-in--4 {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes hero-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.hero__scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-lg);
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: var(--color-white);
+  opacity: 0.85;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.hero__scroll-cue:hover {
+  opacity: 1;
+  border-color: var(--color-white);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__scroll-cue {
+    animation: hero-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both, scroll-cue-bounce 2.2s ease-in-out 1.8s infinite;
+  }
+
+  @keyframes scroll-cue-bounce {
+    0%,
+    100% {
+      transform: translate(-50%, 0);
+    }
+    50% {
+      transform: translate(-50%, 8px);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__scroll-cue {
+    display: none;
+  }
+}
+
 /* ---------- About ---------- */
 .about-grid {
   display: grid;

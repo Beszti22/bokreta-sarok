@@ -22,6 +22,7 @@ const translations = {
       "Friss vágott virágok, kézzel kötött csokrok és egyedi dekoráció — a Mester utca és a Bokréta utca sarkán.",
     hero_cta_primary: "Foglalás most",
     hero_cta_secondary: "Kapcsolat",
+    hero_scroll_cue_label: "Görgessen lejjebb",
 
     about_eyebrow: "Rólunk",
     about_title: "Virágok, amik számítanak",
@@ -135,6 +136,7 @@ const translations = {
       "Fresh cut flowers, hand-tied bouquets and bespoke decoration — on the corner of Mester utca and Bokréta utca.",
     hero_cta_primary: "Book now",
     hero_cta_secondary: "Contact us",
+    hero_scroll_cue_label: "Scroll down",
 
     about_eyebrow: "About us",
     about_title: "Flowers that matter",
