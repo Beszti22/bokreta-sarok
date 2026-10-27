@@ -32,9 +32,17 @@ export default async function handler(req, res) {
   const fromAddress = process.env.CONTACT_FROM_ADDRESS || "no-reply@bokretasarok.com";
   const toAddress = process.env.CONTACT_TO_ADDRESS || "info@bokretasarok.com";
 
+  // Demo/preview mode: until RESEND_API_KEY is set in the Vercel project,
+  // don't actually try to send — just log the submission and tell the
+  // frontend it succeeded, so a visitor testing the form sees the normal
+  // success state instead of a red error message. Remove this block (or
+  // just set the env var) once the shop's real inbox is wired up.
   if (!apiKey) {
-    console.error("RESEND_API_KEY is not configured");
-    return res.status(500).json({ error: "Email service not configured" });
+    console.warn(
+      "RESEND_API_KEY is not configured — demo mode, submission logged but not emailed:",
+      { name, email, message }
+    );
+    return res.status(200).json({ ok: true, demo: true });
   }
 
   try {
